@@ -113,75 +113,159 @@ function Navbar() {
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   HERO SECTION
+   HERO SECTION (ULTRA-MODERN & FULLY RESPONSIVE)
 ═══════════════════════════════════════════════════════════════ */
 function Hero() {
   return (
-    <section className="relative pt-16 pb-20 lg:pt-24 lg:pb-32 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-amber-50/30 to-orange-50/40"></div>
-      <div className="absolute top-20 right-0 w-[500px] h-[500px] bg-gradient-to-br from-orange-200/40 to-rose-200/40 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gradient-to-br from-indigo-200/40 to-purple-200/40 rounded-full blur-3xl"></div>
+    <section className="relative pt-8 pb-16 sm:pt-14 sm:pb-24 lg:pt-20 lg:pb-28 overflow-hidden bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white">
+      {/* Ambient background glows */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[500px] pointer-events-none">
+        <div className="absolute top-10 left-10 sm:left-1/4 w-72 sm:w-96 h-72 sm:h-96 bg-amber-500/15 rounded-full blur-[100px] animate-pulse" />
+        <div className="absolute top-20 right-10 sm:right-1/4 w-72 sm:w-96 h-72 sm:h-96 bg-rose-500/15 rounded-full blur-[100px]" />
+      </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Left */}
-          <div className="space-y-7 max-w-2xl mx-auto lg:mx-0 text-center lg:text-left">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 text-amber-700 text-xs font-bold tracking-wider uppercase">
-              <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse"></span>
-              Premium Home & Living
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+          {/* Left Content Column (7 cols) */}
+          <div className="lg:col-span-7 space-y-6 sm:space-y-8 text-center lg:text-left">
+            {/* Pill Badge */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-amber-500/10 via-orange-500/10 to-rose-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold tracking-wide">
+              <span className="w-2 h-2 rounded-full bg-amber-400 animate-ping" />
+              <span>2026 ARCHITECTURAL LIVING COLLECTION</span>
             </div>
-            <h1 className="text-5xl lg:text-7xl font-black text-slate-900 tracking-tight leading-[1.05]">
-              Transform Your<br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-600">Living Space</span>
+
+            {/* Headline */}
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-[1.15]">
+              Elevate Your Home with{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-orange-400 to-rose-500">
+                Timeless Luxury
+              </span>
             </h1>
-            <p className="text-xl lg:text-2xl text-slate-700 font-medium">
-              Curated furniture & decor for modern homes
+
+            {/* Subtext */}
+            <p className="text-base sm:text-lg text-slate-300 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+              Curated artisanal furniture engineered for modern comfort, architectural elegance, and heirloom durability.
             </p>
-            <div className="space-y-2">
-              <p className="text-lg text-slate-600">Handcrafted with love • Delivered with care</p>
-              <p className="text-lg text-slate-600">Free shipping on orders above ₹5000</p>
+
+            {/* Key Value Highlights */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-1 max-w-lg mx-auto lg:mx-0 text-left">
+              <div className="flex items-center gap-2.5 p-3 rounded-xl bg-slate-900/60 border border-slate-800">
+                <span className="text-amber-400 text-lg">💎</span>
+                <div>
+                  <p className="text-xs font-bold text-white">Solid Teak Wood</p>
+                  <p className="text-[11px] text-slate-400">Master handcrafted</p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-2.5 p-3 rounded-xl bg-slate-900/60 border border-slate-800">
+                <span className="text-orange-400 text-lg">⚡</span>
+                <div>
+                  <p className="text-xs font-bold text-white">White-Glove Setup</p>
+                  <p className="text-[11px] text-slate-400">Delivered & installed</p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-2.5 p-3 rounded-xl bg-slate-900/60 border border-slate-800">
+                <span className="text-emerald-400 text-lg">🛡️</span>
+                <div>
+                  <p className="text-xs font-bold text-white">10-Yr Guarantee</p>
+                  <p className="text-[11px] text-slate-400">Postgres verified</p>
+                </div>
+              </div>
             </div>
-            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 pt-3">
-              <Link href="#" className="w-full sm:w-auto flex items-center justify-center gap-2.5 px-7 py-3.5 text-base font-bold text-white bg-gradient-to-r from-amber-500 to-orange-600 rounded-xl hover:from-amber-600 hover:to-orange-700 transition-all shadow-lg shadow-orange-500/30 hover:-translate-y-0.5">
-                Shop Collection <ArrowRightIcon />
+
+            {/* Call to Action Buttons */}
+            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5 pt-2">
+              <Link
+                href="/login"
+                className="w-full sm:w-auto px-8 py-3.5 text-sm sm:text-base font-bold text-slate-950 bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 rounded-xl shadow-lg shadow-amber-500/25 hover:shadow-amber-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2 cursor-pointer"
+              >
+                <span>Get Started / Sign In</span>
+                <ArrowRightIcon />
               </Link>
-              <Link href="#" className="w-full sm:w-auto flex items-center justify-center gap-2.5 px-7 py-3.5 text-base font-bold text-indigo-700 bg-white rounded-xl hover:bg-slate-50 transition-all shadow-lg border-2 border-indigo-100">
-                View Catalog
+              <Link
+                href="/dashboard"
+                className="w-full sm:w-auto px-7 py-3.5 text-sm sm:text-base font-semibold text-slate-200 bg-slate-800/80 hover:bg-slate-800 border border-slate-700/80 rounded-xl hover:text-white transition-all flex items-center justify-center gap-2 shadow-md"
+              >
+                <span>View Dashboard</span>
               </Link>
+            </div>
+
+            {/* Social Proof */}
+            <div className="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 text-xs text-slate-400">
+              <div className="flex -space-x-2">
+                <div className="w-7 h-7 rounded-full bg-gradient-to-tr from-amber-500 to-orange-500 flex items-center justify-center text-[10px] font-bold text-slate-950 border-2 border-slate-900">JD</div>
+                <div className="w-7 h-7 rounded-full bg-gradient-to-tr from-rose-500 to-pink-500 flex items-center justify-center text-[10px] font-bold text-white border-2 border-slate-900">MK</div>
+                <div className="w-7 h-7 rounded-full bg-gradient-to-tr from-indigo-500 to-blue-500 flex items-center justify-center text-[10px] font-bold text-white border-2 border-slate-900">RS</div>
+                <div className="w-7 h-7 rounded-full bg-slate-700 flex items-center justify-center text-[9px] font-bold text-slate-200 border-2 border-slate-900">+12k</div>
+              </div>
+              <div className="flex items-center gap-1">
+                <div className="flex text-amber-400">
+                  <StarIcon />
+                  <StarIcon />
+                  <StarIcon />
+                  <StarIcon />
+                  <StarIcon />
+                </div>
+                <span className="font-semibold text-slate-200">4.9/5 Rating</span>
+                <span>from verified homeowners</span>
+              </div>
             </div>
           </div>
 
-          {/* Right - Visual Composition */}
-          <div className="relative flex justify-center lg:justify-end">
-            <div className="relative w-[320px] h-[320px] sm:w-[400px] sm:h-[400px] md:w-[460px] md:h-[460px]">
-              {/* Gradient ring */}
-              <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-amber-300 via-orange-200 to-rose-300 opacity-70 blur-sm scale-105"></div>
-              <div className="absolute inset-2 rounded-full bg-gradient-to-tr from-amber-200 via-white to-orange-200"></div>
+          {/* Right Showcase Visual Column (5 cols) */}
+          <div className="lg:col-span-5 relative">
+            <div className="relative mx-auto max-w-md lg:max-w-none">
+              {/* Main Showcase Card */}
+              <div className="relative rounded-3xl overflow-hidden bg-slate-900 border border-slate-800 shadow-2xl shadow-black/80 group">
+                <div className="aspect-[4/3] sm:aspect-[16/13] w-full relative">
+                  <Image
+                    src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=85"
+                    alt="Luxury Emerald Sofa"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                    priority
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent" />
+                </div>
 
-              {/* Main Product Image */}
-              <Image
-                src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                alt="Premium Furniture"
-                width={600} height={600}
-                className="absolute inset-3 w-[calc(100%-1.5rem)] h-[calc(100%-1.5rem)] object-cover rounded-full border-4 border-white shadow-2xl z-10"
-                priority
-              />
+                {/* Floating Trending Badge */}
+                <div className="absolute top-4 left-4 z-20 px-3 py-1.5 rounded-full bg-slate-950/80 backdrop-blur-md border border-amber-500/30 text-amber-400 text-xs font-bold flex items-center gap-1.5 shadow-lg">
+                  <span>🔥</span>
+                  <span>Trending Choice 2026</span>
+                </div>
 
-              {/* Floating Product Cards */}
-              {[
-                { label: "SOFA SETS", img: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=120&h=120&fit=crop", pos: "top-0 -left-4 sm:-left-8", anim: "animate-float-slow" },
-                { label: "DINING TABLES", img: "https://images.unsplash.com/photo-1617806118233-18e1de247200?w=120&h=120&fit=crop", pos: "top-0 -right-4 sm:-right-8", anim: "animate-float-delayed" },
-                { label: "BEDROOM", img: "https://images.unsplash.com/photo-1505693416388-b0346ef4143d?w=120&h=120&fit=crop", pos: "bottom-8 -left-4 sm:-left-8", anim: "animate-float" },
-                { label: "LIGHTING", img: "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?w=120&h=120&fit=crop", pos: "bottom-8 -right-4 sm:-right-8", anim: "animate-float-slow-delayed" },
-              ].map((b, i) => (
-                <div key={i} className={`absolute ${b.pos} z-20 ${b.anim}`}>
-                  <div className="bg-white p-1.5 rounded-2xl shadow-xl border border-slate-100 flex flex-col items-center gap-1">
-                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full overflow-hidden border-2 border-white shadow-md">
-                      <Image src={b.img} alt="" width={56} height={56} className="w-full h-full object-cover" />
-                    </div>
-                    <span className="text-[9px] sm:text-[10px] font-black text-slate-800 bg-gradient-to-r from-amber-400 to-orange-400 px-2 py-0.5 rounded whitespace-nowrap">{b.label}</span>
+                {/* Bottom Product Info Glass Card */}
+                <div className="absolute bottom-4 left-4 right-4 z-20 p-4 rounded-2xl bg-slate-950/85 backdrop-blur-xl border border-slate-800/90 flex items-center justify-between shadow-2xl">
+                  <div>
+                    <span className="text-[10px] font-black tracking-wider uppercase text-amber-400">
+                      Living Room Series
+                    </span>
+                    <h3 className="text-sm sm:text-base font-bold text-white">
+                      Emerald Velvet Signature Sofa
+                    </h3>
+                    <p className="text-xs text-slate-400 mt-0.5">
+                      Handcrafted Pine Frame • 5 Seater
+                    </p>
+                  </div>
+                  <div className="text-right">
+                    <span className="text-xs line-through text-slate-500">₹62,000</span>
+                    <p className="text-base sm:text-lg font-black text-amber-400">₹45,000</p>
                   </div>
                 </div>
-              ))}
+              </div>
+
+              {/* Floating Review Badge */}
+              <div className="hidden sm:flex absolute -bottom-5 -left-4 z-30 p-3.5 rounded-2xl bg-slate-900/95 backdrop-blur-xl border border-slate-700/80 shadow-2xl items-center gap-3 animate-float">
+                <div className="w-10 h-10 rounded-xl bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center text-emerald-400 font-bold text-lg">
+                  ✓
+                </div>
+                <div>
+                  <p className="text-xs font-bold text-white">In Stock & Verified</p>
+                  <p className="text-[11px] text-slate-400">Ready for priority dispatch</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
